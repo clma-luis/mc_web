@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react"
+import { THEME } from "../constants/localStorageVariables"
 
 type Theme = "dark" | "light" | "system"
 
@@ -27,7 +28,7 @@ export function ThemeProvider({
   ...props
 }: ThemeProviderProps) {
   const [theme, setTheme] = useState<Theme>(
-    () => (localStorage.getItem(storageKey) as Theme) || defaultTheme
+    () => (localStorage.getItem("dark") as Theme) || defaultTheme
   )
 
   useEffect(() => {
