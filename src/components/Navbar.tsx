@@ -61,17 +61,22 @@ const Navbar = () => {
               </a>
             </li>
             <li className="hidden sm:block">
-              <a href="#work" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+              <a href="#experience" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                 {isSpanish ? "Trabajo" : "Work"}
               </a>
             </li>
             <li className="hidden sm:block">
-              <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+              <a href="#skills" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                 {isSpanish ? "Skills" : "Skills"}
               </a>
             </li>
             <li className="hidden sm:block">
-              <a href="#" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+              <a href="#portfolio" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+                {isSpanish ? "Portfolio" : "Portafolio"}
+              </a>
+            </li>
+            <li className="hidden sm:block">
+              <a href="#contact" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                 {isSpanish ? "Contacto" : "Contact"}
               </a>
             </li>

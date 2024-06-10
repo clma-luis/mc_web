@@ -2,16 +2,26 @@ import { ReactTyped } from "react-typed";
 import Logo from "../Logo";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { Button } from "../ui/button";
+import { motion } from "framer-motion";
 
-const Home = () => {
+const HomeSection = () => {
   return (
-    <div className="min-h-screen flex justify-between dark:text-white pt-[72px] border-gray-200 border-b-2 p-4">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 2.5 }}
+      id="home"
+      className="min-h-screen flex justify-between dark:text-white py-[72px] border-gray-200 border-b-2 p-4"
+    >
       <div className="max-w-screen-xl flex flex-col flex-wrap items-center justify-center mx-auto p-4">
         <div className="w-full flex flex-col items-center justify-center gap-4 px-4 py-4 ">
           <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
             <Avatar className="h-40 w-40 z-0">
               <img src="../../public/photo.jpg" alt="" />
-              <AvatarFallback><Logo width={100} height={100}/></AvatarFallback>
+              <AvatarFallback>
+                <Logo width={100} height={100} />
+              </AvatarFallback>
             </Avatar>
             <div className=" text-center md:text-start">
               <p className="text-gray-500 dark:text-gray-400">Hi! I'm</p>
@@ -26,11 +36,15 @@ const Home = () => {
         </div>
         <div className="w-full flex items-center justify-center gap-4 px-4 ">
           <Button>Dowload CV</Button>
-          <Button variant="outline">Linkedin</Button>
+          <Button variant="outline">
+            <a href="https://www.linkedin.com/in/clma/" target="_blank" rel="noopener noreferrer">
+              Linkedin
+            </a>
+          </Button>
         </div>
       </div>
-    </div>
+    </motion.section>
   );
 };
 
-export default Home;
+export default HomeSection;

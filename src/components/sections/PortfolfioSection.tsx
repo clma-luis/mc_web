@@ -1,8 +1,20 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons"
+import { useInView } from "react-intersection-observer";
+import { motion } from "framer-motion";
+
 
 const PortfolfioSection = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="min-h-screen flex justify-center dark:text-white pt-[72px] border-gray-200 border-b-2 p-4">
+    <motion.section
+    ref={ref}
+    initial={{ opacity: 0, y: 50 }}
+    animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+    transition={{ duration: 2 }} id="portfolio" className="min-h-screen flex justify-center dark:text-white pt-[72px] pb-[72px] border-gray-200 border-b-2 p-4">
       <div className="container px-4 md:px-6 mx-auto max-w-4xl space-y-6">
       <div className="flex flex-col items-center justify-center space-y-4 text-center">
         <div className="space-y-2">
@@ -93,7 +105,7 @@ const PortfolfioSection = () => {
        
       </div>
     </div>
-  </section>
+  </motion.section>
   )
 }
 

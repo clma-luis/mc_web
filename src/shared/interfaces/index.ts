@@ -4,3 +4,8 @@ export enum Anchor {
   bottom = "bottom",
   right = "right",
 }
+
+export enum LenguageType {
+  es = "es",
+  en = "en",
+}
