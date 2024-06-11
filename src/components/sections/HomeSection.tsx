@@ -3,8 +3,12 @@ import Logo from "../Logo";
 import { Avatar, AvatarFallback } from "../ui/avatar";
 import { Button } from "../ui/button";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/shared/hooks/useLanguage";
+import { AiFillLinkedin } from "react-icons/ai";
 
 const HomeSection = () => {
+  const { language } = useLanguage();
+
   return (
     <motion.section
       initial={{ opacity: 0 }}
@@ -24,20 +28,21 @@ const HomeSection = () => {
               </AvatarFallback>
             </Avatar>
             <div className=" text-center md:text-start">
-              <p className="text-gray-500 dark:text-gray-400">Hi! I'm</p>
+              <p className="text-gray-500 dark:text-gray-400">{text.greetings[language]}</p>
               <div className=" dark:text-white text-2xl font-bold">Carlos Luis Marín</div>
-              <p className="text-gray-500 dark:text-gray-400">Softawer developer</p>
+              <p className="text-gray-500 dark:text-gray-400">Software developer</p>
             </div>
           </div>
 
           <h1 className="text-center text-[30px] font-bold leading-tight tracking-tighter md:text-5xl lg:leading-[1.1]">
-            <ReactTyped strings={["WELCOME TO MY PORTAFOLIO"]} typeSpeed={80} />
+            <ReactTyped strings={[text.welcome[language]]} typeSpeed={80} />
           </h1>
         </div>
         <div className="w-full flex items-center justify-center gap-4 px-4 ">
-          <Button>Dowload CV</Button>
+          <Button>{text.btnOne[language]}</Button>
           <Button variant="outline">
-            <a href="https://www.linkedin.com/in/clma/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/clma/" target="_blank" rel="noopener noreferrer" className="flex gap-1">
+              <AiFillLinkedin className="h-5 w-5 text-gray-500 dark:text-white" />
               Linkedin
             </a>
           </Button>
@@ -48,3 +53,18 @@ const HomeSection = () => {
 };
 
 export default HomeSection;
+
+const text = {
+  greetings: {
+    en: "Hi, I'm ",
+    es: "Hola, soy",
+  },
+  welcome: {
+    en: "Welcome to my portfolio!",
+    es: "¡Bienvenido a mi portafolio!",
+  },
+  btnOne: {
+    en: "Dowload CV",
+    es: "Descardar CV",
+  },
+};

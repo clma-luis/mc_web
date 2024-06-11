@@ -1,31 +1,30 @@
 import { THEME } from "@/shared/constants/localStorageVariables";
 import { HOME_URL } from "@/shared/constants/urlPaths";
+import useSheet from "@/shared/hooks/useSheet";
 import { useTheme } from "@/shared/providers/ThemeProviders";
 import { getLocalStorage } from "@/shared/utils/localStorageUtils";
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 import React from "react";
-import { Button } from "./ui/button";
 import Logo from "./Logo";
-import BarsIcon from "./ui/icons/BarsIcon";
-import useSheet from "@/shared/hooks/useSheet";
 import { MobileMenu } from "./MobileMenu";
 import { SettingsMenu } from "./settingsMenu";
+import { Button } from "./ui/button";
+import BarsIcon from "./ui/icons/BarsIcon";
+import { useLanguage } from "@/shared/hooks/useLanguage";
+import { LenguageType } from "@/shared/interfaces";
+import { scrollToSection } from "@/shared/utils/scrollUtils";
 
-enum ModeType {
-  LIGHT = "Light",
-  DARK = "Dark",
-}
+
 
 const Navbar = () => {
   const { createSheet } = useSheet();
   const { setTheme } = useTheme();
-  const [modeType, setModeType] = React.useState(ModeType.LIGHT);
-  const [isSpanish, setIsSpanish] = React.useState(false);
+  const { language } = useLanguage();
+  const isSpanish = language === LenguageType.es;
+
   const currentTheme = getLocalStorage(THEME);
 
   React.useEffect(() => {
     if (currentTheme) {
-      setModeType(ModeType[currentTheme.toUpperCase() as keyof typeof ModeType]);
       setTheme(currentTheme);
     }
   }, []);
@@ -55,27 +54,62 @@ const Navbar = () => {
 
         <div className=" hidden sm:flex md:space-x-0 rtl:space-x-reverse ">
           <ul className="flex items-center gap-0 sm:gap-4">
-            <li className="hidden sm:block">
+            <li className="hidden sm:block"
+             onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("home");
+            }}
+            >
               <a href="#home" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                 {isSpanish ? "Inicio" : "Home"}
               </a>
             </li>
-            <li className="hidden sm:block">
-              <a href="#experience" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
-                {isSpanish ? "Trabajo" : "Work"}
+            <li className="hidden sm:block"
+             onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("about");
+            }}
+            >
+              <a href="#about" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+                {isSpanish ? "Sebre mi" : "About"}
               </a>
             </li>
-            <li className="hidden sm:block">
+            <li className="hidden sm:block"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("skills");
+              }}>
               <a href="#skills" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
-                {isSpanish ? "Skills" : "Skills"}
+                {isSpanish ? "Habilidades" : "Skills"}
               </a>
             </li>
-            <li className="hidden sm:block">
+            
+            <li
+              className="hidden sm:block"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("experience");
+              }}
+            >
+              <a href="#experience" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
+                {isSpanish ? "Experiencia" : "Experience"}
+              </a>
+            </li>
+            <li className="hidden sm:block"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("portfolio");
+            }}>
               <a href="#portfolio" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                 {isSpanish ? "Portfolio" : "Portafolio"}
               </a>
             </li>
-            <li className="hidden sm:block">
+            <li className="hidden sm:block"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("contact");
+              }}
+            >
               <a href="#contact" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
                 {isSpanish ? "Contacto" : "Contact"}
               </a>

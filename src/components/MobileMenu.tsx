@@ -4,6 +4,7 @@ import { useLanguage } from "@/shared/hooks/useLanguage";
 import useSheet from "@/shared/hooks/useSheet";
 import { Button } from "./ui/button";
 import { SheetHeader, SheetTitle } from "./ui/sheet";
+import { scrollToSection } from "@/shared/utils/scrollUtils";
 
 export const MobileMenu = () => {
   const { closeSheet } = useSheet();
@@ -21,7 +22,14 @@ export const MobileMenu = () => {
 
       {data.map((item) => (
         <Button key={item.url} variant={"ghost"} className="w-full flex justify-start dark:text-white" onClick={() => handleNavigation()}>
-          <a href={item.url} className="w-full flex justify-start">
+          <a
+            href={`#${item.url}`}
+            className="w-full flex justify-start"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection(item.url);
+            }}
+          >
             {item[language]}
           </a>
         </Button>
@@ -39,26 +47,32 @@ const data: Record<string, string>[] = [
   {
     es: "Inicio",
     en: "Home",
-    url: "#home",
+    url: "home",
   },
   {
-    es: "Experiencia",
-    en: "Experience",
-    url: "#experience",
+    es: "Sobre mi",
+    en: "About",
+    url: "about",
   },
   {
     es: "Habilidades",
     en: "Skills",
-    url: "#skills",
+    url: "skills",
   },
+  {
+    es: "Experiencia",
+    en: "Experience",
+    url: "experience",
+  },
+ 
   {
     es: "Portafolio",
     en: "Portfolio",
-    url: "#portfolio",
+    url: "portfolio",
   },
   {
     es: "Contacto",
     en: "Contact",
-    url: "#contact",
+    url: "contact",
   },
 ];

@@ -1,9 +1,9 @@
+import { useLanguage } from "@/shared/hooks/useLanguage";
+import { motion } from "framer-motion";
 import { FaAws, FaCss3Alt, FaDatabase, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
 import { SiExpress, SiJavascript, SiMongodb, SiNestjs, SiNextdotjs, SiTailwindcss, SiTypescript } from "react-icons/si";
-import { Card, CardContent } from "../ui/card";
 import { useInView } from "react-intersection-observer";
-import { motion } from "framer-motion";
-import { useLanguage } from "@/shared/hooks/useLanguage";
+import { Card, CardContent } from "../ui/card";
 
 const SkillsSection = () => {
   const { language } = useLanguage();
@@ -58,6 +58,8 @@ const text = {
     es: "Tengo experiencia con las siguientes tecnologías:",
   },
 };
+
+
 
 const skillsData = [
   {

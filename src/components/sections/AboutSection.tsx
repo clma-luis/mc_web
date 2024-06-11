@@ -40,10 +40,10 @@ const AboutSection = () => {
               </div>
               <div>
                 <p className="text-gray-500 dark:text-gray-400">
-                  {text.description[language].one}
+                  {text.description[language]?.one}
                   <br />
                   <br />
-                  {text.description[language].two}
+                  {text.description[language]?.two}
                 </p>
               </div>
             </div>

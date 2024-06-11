@@ -1,4 +1,3 @@
-import { AccordionDemo } from "./components/Demo";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/sections/AboutSection";
 import ExperienceSection from "./components/sections/ExperienceSection";
