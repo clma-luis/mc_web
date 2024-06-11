@@ -5,9 +5,12 @@ import { Button } from "../ui/button";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/shared/hooks/useLanguage";
 import { AiFillLinkedin } from "react-icons/ai";
+import { LenguageType } from "@/shared/interfaces";
 
 const HomeSection = () => {
   const { language } = useLanguage();
+  const isSpanish = language === LenguageType.es;
+  const pdf = isSpanish ? "CV_CLMA_ES" : "CV_ENGLISH_CLMA_";
 
   return (
     <motion.section
@@ -39,7 +42,9 @@ const HomeSection = () => {
           </h1>
         </div>
         <div className="w-full flex items-center justify-center gap-4 px-4 ">
-          <Button>{text.btnOne[language]}</Button>
+          <Button><a href={`../../public/${pdf}.pdf`} target="_blank" rel="noopener noreferrer">
+          {text.btnOne[language]}
+          </a></Button>
           <Button variant="outline">
             <a href="https://www.linkedin.com/in/clma/" target="_blank" rel="noopener noreferrer" className="flex gap-1">
               <AiFillLinkedin className="h-5 w-5 text-gray-500 dark:text-white" />

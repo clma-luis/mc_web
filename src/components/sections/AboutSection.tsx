@@ -21,7 +21,7 @@ const AboutSection = () => {
         <div className="mx-auto max-w-4xl space-y-6">
           <div className="space-y-2 text-center">
             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl dark:text-white">{text.title[language]}</h2>
-            <p className="text-gray-500 dark:text-gray-400">{text.subtitle[language]}</p>
+            <p className="text-center text-gray-500 md:text-xl dark:text-gray-400">{text.subtitle[language]}</p>
           </div>
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex items-center justify-center">
