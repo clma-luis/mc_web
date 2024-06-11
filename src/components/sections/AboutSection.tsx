@@ -62,7 +62,7 @@ const text = {
     en: "About me",
   },
   subtitle: {
-    es: "Conozma mas sobre mi trayectoria y habilidades.",
+    es: "Conozca mas sobre mi trayectoria y habilidades.",
     en: "Know more about my experience and skills.",
   },
   profesional: {
