@@ -13,7 +13,6 @@ function App() {
         <Navbar />
       </header>
       <main className="bg-background dark:bg-background">
-       
         <HomeSection />
         <AboutSection />
         <SkillsSection />
