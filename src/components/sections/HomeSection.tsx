@@ -70,6 +70,6 @@ const text = {
   },
   btnOne: {
     en: "Dowload CV",
-    es: "Descardar CV",
+    es: "Descargar CV",
   },
 };

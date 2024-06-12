@@ -9,6 +9,8 @@ const PortfolfioSection = () => {
     threshold: 0.1,
   });
 
+  //https://scanner-qr-seven.vercel.app/ scanner qr
+
   return (
     <motion.section
     ref={ref}
