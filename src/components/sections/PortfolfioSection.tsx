@@ -36,7 +36,7 @@ const PortfolfioSection = () => {
         demo: "https://scanner-qr-seven.vercel.app/",
         github: "https://github.com/clma-luis/ScannerQR",
         icons: ["react", "next", "ts", "js", "shadcn-ui", "tailwind", "vite", "html", "css"],
-        image: "../../public/myprofile.jpg",
+        image: "/myprofile.jpg",
       },
       {
         title: {
@@ -50,7 +50,7 @@ const PortfolfioSection = () => {
         demo: "https://scanner-qr-seven.vercel.app/",
         github: "https://github.com/clma-luis/ScannerQR",
         icons: ["react", "next", "ts", "js", "shadcn-ui", "tailwind", "vite", "html", "css"],
-        image: "../../public/scannerqr.jpg",
+        image: "/scannerqr.jpg",
       },
     ],
   };
