@@ -15,7 +15,7 @@ const AboutSection = () => {
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 2 }}
       id="about"
-      className="min-h-screen flex justify-between dark:text-white py-[72px] border-gray-200 border-b-2 p-4"
+      className="min-h-screen flex justify-between dark:text-white py-[72px] border-gray-200 border-b-2 p-4 dark:bg-background"
     >
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-4xl space-y-6">
@@ -26,7 +26,7 @@ const AboutSection = () => {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex items-center justify-center">
               <img
-                src="../../public/photo.jpg"
+                src="../../public/photoTwo.jpg"
                 alt="Foto de perfil"
                 width={300}
                 height={300}

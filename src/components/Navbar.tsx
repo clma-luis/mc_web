@@ -36,7 +36,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0  border-gray-500  bg-background dark:bg-background border-b-2 z-50">
+    <nav className="fixed top-0 left-0 right-0  border-gray-500  bg-[#FAFAFA] dark:bg-background border-b-2 z-50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <div className="sm:hidden ">
           <Button
@@ -101,7 +101,7 @@ const Navbar = () => {
               scrollToSection("portfolio");
             }}>
               <a href="#portfolio" className="text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-50">
-                {isSpanish ? "Portfolio" : "Portafolio"}
+                {isSpanish ? "Portafolio" : "Portfolio"}
               </a>
             </li>
             <li className="hidden sm:block"

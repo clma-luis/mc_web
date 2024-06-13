@@ -15,6 +15,7 @@ import {
   SiShadcnui,
   SiTailwindcss,
   SiTypescript,
+  SiVite,
   SiWordpress,
 } from "react-icons/si";
 import { FaAngular, FaCss3Alt, FaHtml5, FaNodeJs, FaReact } from "react-icons/fa";
@@ -74,13 +75,17 @@ const ExperienceSection = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
-                    {item.checks &&
+                    {item.checks && (
+                      item.checks[language] && (
+                        
                       item.checks[language].map((task, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <CheckIcon className="text-green-500 mt-1 h-5 w-5 flex-shrink-0 " />
                           <span>{task}</span>
                         </li>
-                      ))}
+                      ))
+                      )
+                    )}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -292,4 +297,5 @@ export const getIcon: Record<string, JSX.Element> = {
   css: <FaCss3Alt className="text-blue-600 w-5 h-5" />,
   wordpress: <SiWordpress className="text-black dark:text-white w-5 h-5" />,
   php: <SiPhp className="text-black dark:text-white w-5 h-5" />,
+  vite: <SiVite className="text-black dark:text-white w-5 h-5" />,
 };

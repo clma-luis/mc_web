@@ -25,7 +25,7 @@ const HomeSection = () => {
         <div className="w-full flex flex-col items-center justify-center gap-4 px-4 py-4 ">
           <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
             <Avatar className="h-40 w-40 z-0">
-              <img src="../../public/photo.jpg" alt="" />
+              <img className="w-full h-full" src="../../public/photo.jpg" alt="my photo" />
               <AvatarFallback>
                 <Logo width={100} height={100} />
               </AvatarFallback>
