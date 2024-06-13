@@ -26,7 +26,7 @@ const AboutSection = () => {
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex items-center justify-center">
               <img
-                src="../../public/photoTwo.jpg"
+                src="/photoTwo.jpg"
                 alt="Foto de perfil"
                 width={300}
                 height={300}

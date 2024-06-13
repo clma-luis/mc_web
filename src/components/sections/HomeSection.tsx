@@ -25,7 +25,7 @@ const HomeSection = () => {
         <div className="w-full flex flex-col items-center justify-center gap-4 px-4 py-4 ">
           <div className="flex flex-col md:flex-row gap-3 items-center justify-center">
             <Avatar className="h-40 w-40 z-0">
-              <img className="w-full h-full" src="../../public/photo.jpg" alt="my photo" />
+              <img className="w-full h-full" src="/photo.jpg" alt="my photo" />
               <AvatarFallback>
                 <Logo width={100} height={100} />
               </AvatarFallback>
@@ -42,7 +42,7 @@ const HomeSection = () => {
           </h1>
         </div>
         <div className="w-full flex items-center justify-center gap-4 px-4 ">
-          <Button><a href={`../../public/${pdf}.pdf`} target="_blank" rel="noopener noreferrer">
+          <Button><a href={`/${pdf}.pdf`} target="_blank" rel="noopener noreferrer">
           {text.btnOne[language]}
           </a></Button>
           <Button variant="outline">
