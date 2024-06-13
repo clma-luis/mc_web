@@ -33,7 +33,7 @@ const HomeSection = () => {
             <div className=" text-center md:text-start">
               <p className="text-gray-500 dark:text-gray-400">{text.greetings[language]}</p>
               <div className=" dark:text-white text-2xl font-bold">Carlos Luis Marín</div>
-              <p className="text-gray-500 dark:text-gray-400">Software developer</p>
+              <p className="text-gray-500 dark:text-gray-400">Fullstack developer</p>
             </div>
           </div>
 
