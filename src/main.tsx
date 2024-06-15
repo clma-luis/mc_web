@@ -7,6 +7,7 @@ import { SheetComponent } from "./components/SheetComponent.tsx";
 import { SheetProvider } from "./shared/providers/SheetProvider.tsx";
 import Footer from "./components/Footer.tsx";
 import { LanguageProvider } from "./shared/providers/LeguageProvider.tsx";
+import ErrorBoundary from "./shared/hooks/useErrorBoundary.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -14,7 +15,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <SheetProvider>
         <LanguageProvider>
           <SheetComponent />
-          <App />
+          <ErrorBoundary>
+            <App />
+          </ErrorBoundary>
           <Footer />
         </LanguageProvider>
       </SheetProvider>

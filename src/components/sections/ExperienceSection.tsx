@@ -27,17 +27,6 @@ const ExperienceSection = () => {
     threshold: 0.1,
   });
 
-  const sectionText = {
-    title: {
-      es: "Experiencia laboral",
-      en: "Work experience",
-    },
-    subtitle: {
-      es: ` Como desarrollador web, he adquirido una amplia experiencia en el diseño y desarrollo de aplicaciones web modernas y
-              escalables.`,
-      en: `As a web developer, I have acquired a great experience in the design and web development.`,
-    },
-  };
 
   return (
     <motion.section
@@ -95,6 +84,31 @@ const ExperienceSection = () => {
 };
 
 export default ExperienceSection;
+
+interface SectionText {
+  title: {
+    es: string;
+    en: string;
+  },
+  subtitle: {
+    es: string;
+    en: string;
+  }
+}
+
+
+const sectionText: SectionText = {
+  title: {
+    es: "Experiencia laboral",
+    en: "Work experience",
+  },
+  subtitle: {
+    es: ` Como desarrollador web, he adquirido una amplia experiencia en el diseño y desarrollo de aplicaciones web modernas y
+            escalables.`,
+    en: `As a web developer, I have acquired a great experience in the design and web development.`,
+  },
+};
+
 
 interface ExperienceSection {
   title: {
