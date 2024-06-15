@@ -23,7 +23,6 @@ export const LanguageProvider = ({ children }: { children: React.ReactNode }) =>
   };
 
   const setLanguage = (value: LenguageType) => {
-    console.log("valor reciente", { value });
     setCurrentLanguage(value);
     setLocalStorage(LANGUAGE, value);
   };

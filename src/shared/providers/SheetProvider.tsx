@@ -42,7 +42,6 @@ export const SheetProvider = ({ children }: { children: React.ReactNode }) => {
 
   const closeSheet = () => {
     setSheetData((prev) => {
-      console.log(prev.anchor);
       return { ...initialValue, anchor: prev.anchor };
     });
   };
