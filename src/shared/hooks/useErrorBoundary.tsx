@@ -11,7 +11,7 @@ const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
     if (hasError) {
       const timer = setTimeout(() => {
         window.location.reload();
-      }, 2000);
+      }, 1000);
 
       return () => clearTimeout(timer);
     }
