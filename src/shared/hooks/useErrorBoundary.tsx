@@ -18,6 +18,7 @@ const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
   }, [hasError]);
 
   const getDerivedStateFromError = (error: Error) => {
+    error;
     setHasError(true);
   };
 
