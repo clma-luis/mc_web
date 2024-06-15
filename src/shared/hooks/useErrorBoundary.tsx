@@ -22,7 +22,6 @@ const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
   };
 
   const componentDidCatch = (error: Error, errorInfo: React.ErrorInfo) => {
-    // También puedes registrar el error en un servicio de reporte de errores
     console.error("ErrorBoundary caught an error", error, errorInfo);
   };
 
@@ -31,9 +30,9 @@ const ErrorBoundary: React.FC<ErrorBoundaryProps> = ({ children }) => {
       <main className="bg-background dark:bg-background">
         <div className="flex space-x-2 justify-center items-center bg-white h-screen dark:invert">
           <span className="sr-only">Loading...</span>
-          <div className="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.3s]"></div>
-          <div className="h-8 w-8 bg-black rounded-full animate-bounce [animation-delay:-0.15s]"></div>
-          <div className="h-8 w-8 bg-black rounded-full animate-bounce"></div>
+          <div className="h-8 w-8 bg-background rounded-full animate-bounce [animation-delay:-0.3s]"></div>
+          <div className="h-8 w-8 bg-background rounded-full animate-bounce [animation-delay:-0.15s]"></div>
+          <div className="h-8 w-8 bg-background rounded-full animate-bounce"></div>
         </div>
       </main>
     );
@@ -52,7 +51,6 @@ interface ErrorBoundaryHandlerProps {
   onCatch: (error: Error, errorInfo: React.ErrorInfo) => void;
 }
 
-// Este componente es necesario para capturar errores en componentes funcionales
 class ErrorBoundaryHandler extends React.Component<ErrorBoundaryHandlerProps> {
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
     this.props.onCatch(error, errorInfo);
