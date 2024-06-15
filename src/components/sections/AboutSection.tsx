@@ -56,7 +56,33 @@ const AboutSection = () => {
 
 export default AboutSection;
 
-const text = {
+
+interface AboutSectionText {
+  title: {
+    es: string;
+    en: string;
+  };
+  subtitle: {
+    es: string;
+    en: string;
+  };
+  profesional: {
+    es: string;
+    en: string;
+  };
+  description: {
+    es: {
+      one: string;
+      two: string;
+    };
+    en: {
+      one: string;
+      two: string;
+    };
+  };
+}
+
+const text: AboutSectionText = {
   title: {
     es: "Sobre mi",
     en: "About me",

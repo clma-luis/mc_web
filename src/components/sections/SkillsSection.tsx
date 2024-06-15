@@ -48,7 +48,18 @@ const SkillsSection = () => {
 
 export default SkillsSection;
 
-const text = {
+interface SkillsSectionText {
+  title: {
+    en: string;
+    es: string;
+  }
+  subtitle: {
+    en: string;
+    es: string;
+  }
+}
+
+const text: SkillsSectionText = {
   title: {
     en: "My Skills",
     es: "Mis habilidades",
@@ -60,8 +71,16 @@ const text = {
 };
 
 
+interface SkillsData {
+  icon: React.ReactNode;
+  title: string;
+  description: {
+    en: string;
+    es: string;
+  };
+}
 
-const skillsData = [
+const skillsData: SkillsData[] = [
   {
     icon: <SiJavascript className="text-yellow-400 w-6 h-6" />,
     title: "JavaScript",

@@ -59,7 +59,23 @@ const HomeSection = () => {
 
 export default HomeSection;
 
-const text = {
+
+interface HomeSectionText {
+  greetings: {
+    en: string;
+    es: string;
+  };
+  welcome: {
+    en: string;
+    es: string;
+  };
+  btnOne: {
+    en: string;
+    es: string;
+  };
+}
+
+const text: HomeSectionText = {
   greetings: {
     en: "Hi, I'm ",
     es: "Hola, soy",

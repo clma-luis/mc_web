@@ -14,47 +14,6 @@ const PortfolfioSection = () => {
     threshold: 0.1,
   });
 
-  const text = {
-    title: {
-      es: "Portafolio",
-      en: "Portfolio",
-    },
-    subtitle: {
-      es: "Aqui puedes ver algunos de mis proyectos más recientes y destacados.",
-      en: "Here you can see some of my latest and featured projects.",
-    },
-    proyects: [
-      {
-        title: {
-          es: "Mi página web",
-          en: "My profile web",
-        },
-        description: {
-          es: "Mi página web de portafolio muestra mis habilidades. Este proyecto esta hecho en react con typescript y tailwind.",
-          en: "My portfolio website showcases my skills. This project is built with React, TypeScript, and Tailwind.",
-        },
-        demo: "https://scanner-qr-seven.vercel.app/",
-        github: "https://github.com/clma-luis/ScannerQR",
-        icons: ["react", "next", "ts", "js", "shadcn-ui", "tailwind", "vite", "html", "css"],
-        image: "/myprofile.jpg",
-      },
-      {
-        title: {
-          es: "Scanner QR",
-          en: "Scanner QR",
-        },
-        description: {
-          es: "Esta aplicación de escáner QR permite utilizar la librería QR SCANNER para la lectura de códigos QR. El proyecto está diseñado para que puedas integrar fácilmente la funcionalidad de escaneo de códigos QR en tus propios proyectos.",
-          en: "This QR scanner application allows you to use the QR SCANNER library to read QR codes. The project is designed so you can easily integrate QR code scanning functionality into your own projects.",
-        },
-        demo: "https://scanner-qr-seven.vercel.app/",
-        github: "https://github.com/clma-luis/ScannerQR",
-        icons: ["react", "next", "ts", "js", "shadcn-ui", "tailwind", "vite", "html", "css"],
-        image: "/scannerqr.jpg",
-      },
-    ],
-  };
-
   return (
     <motion.section
       ref={ref}
@@ -76,17 +35,16 @@ const PortfolfioSection = () => {
         <div className="grid gap-6 mt-10">
           {text.proyects.map((proyect, index) => (
             <div key={proyect.title[language]} className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {!isDesktop && (
-                (index % 2 === 0 )) && (
-                  <div className="bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-950 border-2 border-gray-500 dark:border-white">
-                    <img
-                      src={proyect.image}
-                      width={600}
-                      height={400}
-                      alt="Proyecto 1"
-                      className="w-full h-48 md:h-full md:w-auto object-cover"
-                    />
-                  </div>
+              {!isDesktop && index % 2 === 0 && (
+                <div className="bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-950 border-2 border-gray-500 dark:border-white">
+                  <img
+                    src={proyect.image}
+                    width={600}
+                    height={400}
+                    alt="Proyecto 1"
+                    className="w-full h-48 md:h-full md:w-auto object-cover"
+                  />
+                </div>
               )}
               <div className="p-4 flex flex-col justify-center">
                 <h3 className="text-lg font-bold">{proyect.title[language]}</h3>
@@ -102,7 +60,7 @@ const PortfolfioSection = () => {
                     href={proyect.demo}
                     className="inline-flex items-center mt-4 text-gray-900 hover:text-gray-700 dark:text-gray-50 dark:hover:text-gray-300"
                   >
-                    <FaLink className="h-5 w-5 text-gray-500 dark:text-white"/>
+                    <FaLink className="h-5 w-5 text-gray-500 dark:text-white" />
                   </a>
                   <a
                     href={proyect.github}
@@ -113,7 +71,7 @@ const PortfolfioSection = () => {
                 </div>
               </div>
 
-              {( (index % 2 !== 0 && !isDesktop) || isDesktop)  && (
+              {((index % 2 !== 0 && !isDesktop) || isDesktop) && (
                 <div className="bg-white rounded-lg shadow-lg overflow-hidden dark:bg-gray-950 border-2 border-gray-500 dark:border-white">
                   <img
                     src={proyect.image}
@@ -133,3 +91,69 @@ const PortfolfioSection = () => {
 };
 
 export default PortfolfioSection;
+
+interface PortfolfioSectionText {
+  title: {
+    es: string;
+    en: string;
+  };
+  subtitle: {
+    es: string;
+    en: string;
+  };
+  proyects: {
+    title: {
+      es: string;
+      en: string;
+    };
+    description: {
+      es: string;
+      en: string;
+    };
+    demo: string;
+    github: string;
+    icons: string[];
+    image: string;
+  }[];
+}
+
+const text: PortfolfioSectionText = {
+  title: {
+    es: "Portafolio",
+    en: "Portfolio",
+  },
+  subtitle: {
+    es: "Aqui puedes ver algunos de mis proyectos más recientes y destacados.",
+    en: "Here you can see some of my latest and featured projects.",
+  },
+  proyects: [
+    {
+      title: {
+        es: "Mi página web",
+        en: "My profile web",
+      },
+      description: {
+        es: "Mi página web de portafolio muestra mis habilidades. Este proyecto esta hecho en react con typescript y tailwind.",
+        en: "My portfolio website showcases my skills. This project is built with React, TypeScript, and Tailwind.",
+      },
+      demo: "https://scanner-qr-seven.vercel.app/",
+      github: "https://github.com/clma-luis/ScannerQR",
+      icons: ["react", "next", "ts", "js", "shadcn-ui", "tailwind", "vite", "html", "css"],
+      image: "/myprofile.jpg",
+    },
+    {
+      title: {
+        es: "Scanner QR",
+        en: "Scanner QR",
+      },
+      description: {
+        es: "Esta aplicación de escáner QR permite utilizar la librería QR SCANNER para la lectura de códigos QR. El proyecto está diseñado para que puedas integrar fácilmente la funcionalidad de escaneo de códigos QR en tus propios proyectos.",
+        en: "This QR scanner application allows you to use the QR SCANNER library to read QR codes. The project is designed so you can easily integrate QR code scanning functionality into your own projects.",
+      },
+      demo: "https://scanner-qr-seven.vercel.app/",
+      github: "https://github.com/clma-luis/ScannerQR",
+      icons: ["react", "next", "ts", "js", "shadcn-ui", "tailwind", "vite", "html", "css"],
+      image: "/scannerqr.jpg",
+    },
+  ],
+};

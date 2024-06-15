@@ -75,17 +75,14 @@ const ExperienceSection = () => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <ul className="grid gap-2 text-gray-500 dark:text-gray-400">
-                    {item.checks && (
-                      item.checks[language] && (
-                        
+                    {item.checks &&
+                      item.checks[language] &&
                       item.checks[language].map((task, index) => (
                         <li key={index} className="flex items-start gap-2">
                           <CheckIcon className="text-green-500 mt-1 h-5 w-5 flex-shrink-0 " />
                           <span>{task}</span>
                         </li>
-                      ))
-                      )
-                    )}
+                      ))}
                   </ul>
                 </AccordionContent>
               </AccordionItem>
@@ -99,7 +96,28 @@ const ExperienceSection = () => {
 
 export default ExperienceSection;
 
-const text = [
+interface ExperienceSection {
+  title: {
+    es: string;
+    en: string;
+  };
+  company: string;
+  date: {
+    es: string;
+    en: string;
+  };
+  description: {
+    es: string;
+    en: string;
+  };
+  skillsIcons: string[];
+  checks: {
+    es: string[];
+    en: string[];
+  };
+}
+
+const text: ExperienceSection[] = [
   {
     title: {
       en: "Frontend / Fullstack Developer",
@@ -117,7 +135,7 @@ const text = [
             embarcación. La app web también como PWA.`,
       en: `Freelance work in a yacht club dedicated to sailing and yachting. The purpose of the application is to register the ships at the dock to have control and status of the actions carried out by the ship's crew. My role for this project was to create an application with a scanner to read unique QR codes for each vessel. The web application is also a PWA.`,
     },
-    skillsIcons: ["js", "ts", "next", "nest",  "shadcn-ui", "tailwind"],
+    skillsIcons: ["js", "ts", "next", "nest", "shadcn-ui", "tailwind"],
     checks: {
       es: [
         `Se realizó creación y toda la configuración de proyecto en next.js 14 con typescript y tailwind. con respecto a la UI se hizo la integración de shadcn UI.`,
@@ -242,6 +260,10 @@ Para este puesto se realizaron tareas ya establecidas en un proyecto ya en proce
 For this position, pre-established tasks were carried out in an ongoing project, supporting the creation of components in React, already having a previous configuration of the connection to call the services already prepared and previously tested by the person in charge of that area.`,
     },
     skillsIcons: ["js", "ts", "react", "mui"],
+    checks: {
+      en: [],
+      es: [],
+    },
   },
   {
     title: {
@@ -260,6 +282,10 @@ Para esta oportunidad, el cliente estaba con la necesidad de tener un buen perfi
 For this opportunity, the client needed a good profile on the internet, where a landing was created with the previously described tools without the use of frameworks. On the other hand, it had a connection with PHP for sending messages, but in general terms, everything was in JavaScript. A photo gallery was made, provided by the client to show the wide variety of products.`,
     },
     skillsIcons: ["js", "ts", "html", "css", "sass", "node", "express", "php"],
+    checks: {
+      es: [],
+      en: [],
+    },
   },
   {
     title: {
@@ -276,6 +302,10 @@ For this opportunity, the client needed a good profile on the internet, where a 
       en: `Creation of the company's Wordpress site with multiple pages related to the business Wordpress, PHP, MYSQL. On the other hand, I supported the creation of components in React for another business initiative.`,
     },
     skillsIcons: ["js", "html", "css", "wordpress", "php"],
+    checks: {
+      es: [],
+      en: [],
+    },
   },
 ];
 
