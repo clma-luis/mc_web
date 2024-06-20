@@ -10,7 +10,7 @@ import { LenguageType } from "@/shared/interfaces";
 const HomeSection = () => {
   const { language } = useLanguage();
   const isSpanish = language === LenguageType.es;
-  const pdf = isSpanish ? "CV_CLMA_ES" : "CV_ENGLISH_CLMA_";
+  const pdf = isSpanish ? "CV_ES" : "CV_EN";
 
   return (
     <motion.section
