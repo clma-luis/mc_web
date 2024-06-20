@@ -48,6 +48,27 @@ const AboutSection = () => {
               </div>
             </div>
           </div>
+
+          <div className="w-full text-gray-500 dark:text-gray-400">
+            <p className="">
+            <strong className="text-blue-500 dark:text-white">{language ? `Mi misión: ` : `My mission: `}</strong>
+              {text.mission[language]}
+              <br />
+              <br />
+              <strong className="text-blue-500 dark:text-white">{language ? `Mi visión: ` : `My vision: `}</strong>
+              {text.vision[language]}
+              <br />
+              <br />
+
+              <strong className="text-blue-500 dark:text-white">{language ? `Mis valores: ` : `My values: `}</strong>
+              {text.values[language]?.map((value, index) => (
+                <span key={index}>
+                  {value}
+                  <br />
+                </span>
+              ))}
+            </p>
+          </div>
         </div>
       </div>
     </motion.section>
@@ -56,20 +77,15 @@ const AboutSection = () => {
 
 export default AboutSection;
 
+interface TwoOption {
+  es: string;
+  en: string;
+}
 
 interface AboutSectionText {
-  title: {
-    es: string;
-    en: string;
-  };
-  subtitle: {
-    es: string;
-    en: string;
-  };
-  profesional: {
-    es: string;
-    en: string;
-  };
+  title: TwoOption;
+  subtitle: TwoOption;
+  profesional: TwoOption;
   description: {
     es: {
       one: string;
@@ -79,6 +95,12 @@ interface AboutSectionText {
       one: string;
       two: string;
     };
+  };
+  mission: TwoOption;
+  vision: TwoOption;
+  values: {
+    es: string[];
+    en: string[];
   };
 }
 
@@ -97,19 +119,38 @@ const text: AboutSectionText = {
   },
   description: {
     es: {
-      one: ` Soy un desarrollador de software especializado en JavaScript, aprovechando su versatilidad para cubrir tanto el frontend
-                como el backend, aspectos esenciales en el desarrollo de software. Actualmente, mis herramientas y tecnologías de interés
-                incluyen TypeScript, React.js, Next.js, Redux, Material-UI, Tailwind CSS, Node.js, Express.js, Nest.js, GraphQL y bases de
-                datos relacionales y no relacionales.`,
-      two: `Estoy en constante aprendizaje y perfeccionamiento de mis habilidades, buscando contribuir al crecimiento de equipos de
-                desarrollo mediante la implementación de estructuras eficientes. Esto garantiza una experiencia de usuario fluida y la
-                escalabilidad a largo plazo, siguiendo los principios SOLID. Estos principios me permiten mantener la organización y la
-                coherencia en las diferentes estructuras necesarias para el desarrollo, sin olvidar la importancia de los patrones de
-                diseño y una arquitectura de software robusta como la arquitectura hexagonal.`,
+      one: `Hola, soy Carlos Luis Marín, un desarrollador de software especializado en JavaScript. Me dedico al desarrollo web, con amplia experiencia en áreas como marketing digital, diseño gráfico y la creación y optimización de páginas web empresariales.`,
+      two: `Mi enfoque principal está en JavaScript, React, Next.js, Node.js, Express, Nest.js y TypeScript, entre otras herramientas. Soy una persona proactiva y participativa, con fuertes habilidades en comunicación efectiva, trabajo colaborativo y liderazgo.`,
     },
     en: {
-      one: `Software developer with a background oriented in the JavaScript language. I take advantage of the advantages of said language to cover the frontend and backend as essential parts for software development. My interests at the moment at the tool level are typescript, React.js, Next.js, Redux, Material UI, Tailwind, Node.js Express.js, Nest.js, graphQL, relational and non-relational databases.`,
-      two: `I am constantly working and studying to improve my skills that allow me to contribute to growth in development teams by implementing efficient structures that guarantee a fluid user experience and long-term scalability using SOLID principles that allow me to keep the different structures that I have in order. They are necessary for development, without leaving aside design patterns and software architecture such as hexagonal architecture.`,
+      one: `Hi, I'm Carlos Luis Marin, a software developer specializing in JavaScript. I have extensive experience in web development, including digital marketing, graphic design, and creating and optimizing business websites.`,
+      two: `My main focus is on JavaScript, React, Next.js, Node.js, Express, Nest.js, and TypeScript, among other tools. I am a proactive and participatory person, with strong skills in effective communication, collaborative work, and leadership.`,
     },
+  },
+  mission: {
+    es: `Mi misión es aportar mis conocimientos en JavaScript y otras tecnologías relacionadas para contribuir al crecimiento de los proyectos en los que participo. Busco ayudar a las personas a alcanzar sus metas a través de una comunicación efectiva y soluciones innovadoras, mientras sigo aprendiendo y compartiendo de manera proactiva con el equipo.`,
+    en: `My mission is to contribute my knowledge in JavaScript and other related technologies to the growth of the projects I am involved in. I aim to help people achieve their goals through effective communication and innovative solutions, while continuously learning and proactively sharing with the team.`,
+  },
+  vision: {
+    es: `Mi visión es liderar proyectos innovadores que no solo resuelvan problemas técnicos, sino que también inspiren a otros desarrolladores a alcanzar su máximo potencial. Aspiro a ser un referente en la comunidad tecnológica, promoviendo la adopción de nuevas tecnologías y prácticas colaborativas que impulsen el éxito colectivo y el desarrollo profesional continuo de todos los miembros del equipo.`,
+    en: `My vision is to lead innovative projects that not only solve technical problems but also inspire other developers to reach their full potential. I aspire to be a reference in the technology community, promoting the adoption of new technologies and collaborative practices that drive collective success and continuous professional development for all team members.`,
+  },
+  values: {
+    es: [
+      " ",
+      "- Proactividad: Siempre dispuesto a alzar la mano y proponer ideas que mejoren el proyecto y el equipo.",
+      "- Aprendizaje continuo: Comprometido con la mejora constante y la adquisición de nuevos conocimientos.",
+      "- Colaboración: Fomento un ambiente de trabajo colaborativo y dinámico, compartiendo conocimientos de manera pedagógica.",
+      "- Innovación: Enfoque en soluciones creativas e innovadoras para resolver problemas complejos.",
+      "- Comunicación efectiva: Prioridad en la claridad y efectividad en la comunicación con el equipo.",
+    ],
+    en: [
+      " ",
+      "- Proactivity: Always willing to raise my hand and propose ideas that improve the project and the team.",
+      "- Continuous learning: Committed to constant improvement and acquiring new knowledge.",
+      "- Collaboration: Fostering a collaborative and dynamic work environment, sharing knowledge in a pedagogical manner.",
+      "- Innovation: Focus on creative and innovative solutions to solve complex problems.",
+      "- Effective communication: Priority on clarity and effectiveness in communication with the team.",
+    ],
   },
 };
