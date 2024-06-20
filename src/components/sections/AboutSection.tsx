@@ -1,8 +1,10 @@
 import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/shared/hooks/useLanguage";
+import { LenguageType } from "@/shared/interfaces";
 const AboutSection = () => {
   const { language } = useLanguage();
+  const isSpanish = language === LenguageType.es;
   const { ref, inView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -51,16 +53,16 @@ const AboutSection = () => {
 
           <div className="w-full text-gray-500 dark:text-gray-400">
             <p className="">
-            <strong className="text-blue-500 dark:text-white">{language ? `Mi misión: ` : `My mission: `}</strong>
+            <strong className="text-blue-500 dark:text-white">{isSpanish ? `Mi misión: ` : `My mission: `}</strong>
               {text.mission[language]}
               <br />
               <br />
-              <strong className="text-blue-500 dark:text-white">{language ? `Mi visión: ` : `My vision: `}</strong>
+              <strong className="text-blue-500 dark:text-white">{isSpanish ? `Mi visión: ` : `My vision: `}</strong>
               {text.vision[language]}
               <br />
               <br />
 
-              <strong className="text-blue-500 dark:text-white">{language ? `Mis valores: ` : `My values: `}</strong>
+              <strong className="text-blue-500 dark:text-white">{isSpanish ? `Mis valores: ` : `My values: `}</strong>
               {text.values[language]?.map((value, index) => (
                 <span key={index}>
                   {value}
